@@ -1,0 +1,167 @@
+/* styling */
+
+:root {
+    /*Primary colors*/
+  
+    --Verydarkblue: hsl(233, 47%, 7%); /* main background*/
+    --Darkdesaturatedblue: hsl(244, 38%, 16%); /* (card background) */
+    --Softviolet: hsl(277, 64%, 61%); /*(accent)*/
+  
+    /*Neutral colors*/
+    --White: hsl(0, 0%, 100%); /* (main heading, stats)*/
+    --Slightlytransparentwhite: hsla(0, 0%, 100%, 0.75); /*(main paragraph) */
+    --SlightlytransparentwhiteHeading: hsla(
+      0,
+      0%,
+      100%,
+      0.6
+    ); /*(stat headings) */
+  
+    /*Font*/
+    --interFont: "Inter", sans-serif;
+    --LexendDeca: "Lexend Deca", sans-serif;
+    --font400: 400;
+    --font700: 700;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  /* Remove default margin */
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    margin: 0;
+  }
+  
+  /* Set body defaults */
+  body {
+    font-size: 1.25rem;
+    background-color: #0a0c1c;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Make images easier to work with */
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+  }
+  
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  
+  .stat-main {
+    background-color: #1b1937;
+  }
+  
+  .preview-picture {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .preview-picture::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--Softviolet); /* Replace with your desired color */
+    opacity: 0.5; /* Adjust opacity as needed */
+    border-radius: 6px;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .stat-main {
+      border-radius: 0px 0px 10px 10px;
+    }
+  }
+  
+  .stat-main {
+    /* Different radii for top-left, top-right, bottom-right, and bottom-left corners */
+    border-radius: 0px 0px 10px 10px;
+  }
+  
+  .preview-picture img {
+    border-radius: 10px 10px 0px 0px;
+  }
+  
+  @media screen and (min-width: 600px) {
+    h1 {
+      font-size: 36px;
+      line-height: 44px;
+    }
+  
+    .stat-main {
+      /* Different radii for top-left, top-right, bottom-right, and bottom-left corners */
+      border-radius: 10px 5px 5px 10px;
+    }
+  
+    .preview-picture img {
+      width: 100%;
+      border-radius: 0px 10px 10px 0px;
+    }
+  
+    .preview-picture::before {
+      width: 100%;
+    }
+  }
+  
+  h1 {
+    font-size: 30px;
+    color: #fff;
+    font-family: var(--interFont);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 114.286% */
+  }
+  
+  span {
+    color: var(--Softviolet);
+  }
+  
+  p {
+    color: #fff;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px; /* 166.667% */
+    opacity: 0.75;
+  }
+  
+  .stat-number p {
+    text-transform: uppercase;
+    color: #fff;
+    font-family: var(--LexendDeca);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px; /* 208.333% */
+    letter-spacing: 1px;
+  }
+  
+  .numbers {
+    color: #fff;
+    font-family: var(--LexendDeca);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
